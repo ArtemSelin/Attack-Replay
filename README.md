@@ -64,3 +64,7 @@ sudo ln -s $(pwd)/attack_replay.sh /usr/local/bin/attack_replay
 sudo attack_replay --help 
 ``````
 ### 📖 Описание синтаксиса и параметров
+Синтаксис программы Attack Replay представляет собой:
+```bash
+./attack_replay.sh [параметры] <путь_к_pcap_файлу_или_директории>
+```
