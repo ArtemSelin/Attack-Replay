@@ -62,11 +62,11 @@ sudo apt update && sudo apt install -y tcpreplay
 Склонируйте репозиторий, назначьте права на исполнение и запустите интерактивную справку одной командой:
 
 ```bash
-git clone https://github.com/ArtemSelin/Attack-Replay.git
-cd Attack-Replay
-chmod +x attack_replay.sh
-sudo ln -s $(pwd)/attack_replay.sh /usr/local/bin/attack_replay
-sudo attack_replay --help 
+git clone https://github.com/ArtemSelin/Attack-Replay.git   # Клонируем репозиторий
+cd Attack-Replay                                            # Переходим в каталог
+chmod +x attack_replay.sh                                   # Даём права на исполнение
+sudo ln -s $(pwd)/attack_replay.sh /usr/local/bin/attack_replay  # Создаём симлинк в PATH
+sudo attack_replay --help                                   # Выводим справку
 ```
 
 ---
