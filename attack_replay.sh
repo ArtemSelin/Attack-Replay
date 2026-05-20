@@ -354,6 +354,18 @@ play_files() {
     local total=${#files[@]}
     [ $total -eq 0 ] && { print_error "Нет файлов для воспроизведения"; return; }
 
+    if [ -n "$INTERFACE" ]; then
+        if ! ip link show "$INTERFACE" &>/dev/null; then
+            print_error "Интерфейс $INTERFACE не существует в системе."
+            exit 1
+        fi
+        
+        if ! ip link show "$INTERFACE" 2>/dev/null | grep -q "UP"; then
+            print_error "Интерфейс $INTERFACE находится в состоянии DOWN. Тест отменен."
+            exit 1
+        fi
+    fi
+
     local repeat_count=$PLAY_COUNT
     [ $repeat_count -lt 1 ] && repeat_count=1
     local use_duration=0
@@ -461,7 +473,7 @@ play_files() {
     fi
 
     if [ $use_duration -eq 1 ]; then
-        if [ $INTERVAL -0 ] 2>/dev/null || [ $INTERVAL -eq 0 ]; then
+        if [ $INTERVAL -eq 0 ] 2>/dev/null || [ $INTERVAL -eq 0 ]; then
             local end_time=$(echo "$start_total + $PLAY_TIME" | bc)
             local iter_num=1
             
@@ -534,7 +546,7 @@ play_files() {
                         else
                             timeout $timeout_sec bash -c "$cmd" >/dev/null 2>&1
                             rc=$?
-                            if [ $rc -eq 0 ]; then
+                            if [ $rc -eq 0 ] && [ $SHORT_STATS -eq 1 ]; then
                                 output=$(bash -c "$cmd" 2>&1)
                                 packets=$(echo "$output" | grep -oP 'Actual: \K\d+(?= packets)' | head -1)
                                 bytes=$(echo "$output" | grep -oP '\((\d+) bytes\)' | head -1 | grep -oP '\d+')
@@ -552,7 +564,7 @@ play_files() {
                         else
                             timeout $timeout_sec bash -c "$cmd"
                             rc=$?
-                            if [ $rc -eq 0 ]; then
+                            if [ $rc -eq 0 ] && [ $SHORT_STATS -eq 1 ]; then
                                 output=$(bash -c "$cmd" 2>&1)
                                 packets=$(echo "$output" | grep -oP 'Actual: \K\d+(?= packets)' | head -1)
                                 bytes=$(echo "$output" | grep -oP '\((\d+) bytes\)' | head -1 | grep -oP '\d+')
@@ -717,7 +729,7 @@ play_files() {
                         else
                             timeout $timeout_sec bash -c "$cmd" >/dev/null 2>&1
                             rc=$?
-                            if [ $rc -eq 0 ]; then
+                            if [ $rc -eq 0 ] && [ $SHORT_STATS -eq 1 ]; then
                                 output=$(bash -c "$cmd" 2>&1)
                                 packets=$(echo "$output" | grep -oP 'Actual: \K\d+(?= packets)' | head -1)
                                 bytes=$(echo "$output" | grep -oP '\((\d+) bytes\)' | head -1 | grep -oP '\d+')
@@ -735,7 +747,7 @@ play_files() {
                         else
                             timeout $timeout_sec bash -c "$cmd"
                             rc=$?
-                            if [ $rc -eq 0 ]; then
+                            if [ $rc -eq 0 ] && [ $SHORT_STATS -eq 1 ]; then
                                 output=$(bash -c "$cmd" 2>&1)
                                 packets=$(echo "$output" | grep -oP 'Actual: \K\d+(?= packets)' | head -1)
                                 bytes=$(echo "$output" | grep -oP '\((\d+) bytes\)' | head -1 | grep -oP '\d+')
@@ -879,7 +891,7 @@ play_files() {
                         else
                             bash -c "$cmd" >/dev/null 2>&1
                             rc=$?
-                            if [ $rc -eq 0 ]; then
+                            if [ $rc -eq 0 ] && [ $SHORT_STATS -eq 1 ]; then
                                 output=$(bash -c "$cmd" 2>&1)
                                 packets=$(echo "$output" | grep -oP 'Actual: \K\d+(?= packets)' | head -1)
                                 bytes=$(echo "$output" | grep -oP '\((\d+) bytes\)' | head -1 | grep -oP '\d+')
@@ -897,7 +909,7 @@ play_files() {
                         else
                             bash -c "$cmd"
                             rc=$?
-                            if [ $rc -eq 0 ]; then
+                            if [ $rc -eq 0 ] && [ $SHORT_STATS -eq 1 ]; then
                                 output=$(bash -c "$cmd" 2>&1)
                                 packets=$(echo "$output" | grep -oP 'Actual: \K\d+(?= packets)' | head -1)
                                 bytes=$(echo "$output" | grep -oP '\((\d+) bytes\)' | head -1 | grep -oP '\d+')
@@ -1005,7 +1017,7 @@ play_files() {
                         else
                             bash -c "$cmd" >/dev/null 2>&1
                             rc=$?
-                            if [ $rc -eq 0 ]; then
+                            if [ $rc -eq 0 ] && [ $SHORT_STATS -eq 1 ]; then
                                 output=$(bash -c "$cmd" 2>&1)
                                 packets=$(echo "$output" | grep -oP 'Actual: \K\d+(?= packets)' | head -1)
                                 bytes=$(echo "$output" | grep -oP '\((\d+) bytes\)' | head -1 | grep -oP '\d+')
@@ -1023,7 +1035,7 @@ play_files() {
                         else
                             bash -c "$cmd"
                             rc=$?
-                            if [ $rc -eq 0 ]; then
+                            if [ $rc -eq 0 ] && [ $SHORT_STATS -eq 1 ]; then
                                 output=$(bash -c "$cmd" 2>&1)
                                 packets=$(echo "$output" | grep -oP 'Actual: \K\d+(?= packets)' | head -1)
                                 bytes=$(echo "$output" | grep -oP '\((\d+) bytes\)' | head -1 | grep -oP '\d+')
