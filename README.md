@@ -61,3 +61,5 @@ cd Attack-Replay
 chmod +x attack_replay.sh
 sudo ln -s $(pwd)/attack_replay.sh /usr/local/bin/attack_replay
 sudo attack_replay --help
+
+## 📖 Подробное описание синтаксиса и параметров
