@@ -126,3 +126,9 @@ sudo ./attack_replay.sh capture.pcap --ip 192.168.1.1 --topspeed
 ```bash
 ./attack_replay.sh "pcaps/" --intf enp0s9 --mbps 3 -l -i 0 --stats
 ```
+
+## 📚 Дополнительно
+
+Подробный разбор принципов работы инструмента **Attack Replay** описан в нашей статье на Habr:
+
+> 🔗 **Читать на Habr:** [-](https://habr.com/ru/articles/ваш_id_статьи/)
