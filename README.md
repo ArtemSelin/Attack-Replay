@@ -67,9 +67,6 @@ sudo attack_replay --help
 ---
 
 ## 📖 Описание синтаксиса и параметров
-
-<img width="1450" height="1584" alt="{BF4DD39C-FB50-444E-A9A3-28BB9AB05F5C}" src="https://github.com/user-attachments/assets/6c81cf3f-251a-49b1-a5a8-30a3ffe40edc" />
-
 Синтаксис программы Attack Replay представляет собой:
 ```bash
 attack_replay [параметры] <путь_к_pcap_файлу_или_директории>
