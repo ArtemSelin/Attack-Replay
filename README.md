@@ -1,4 +1,4 @@
-# Attack Replay (v2.0.0)
+<img width="1243" height="380" alt="{520118FF-21CF-4F60-9821-BE8B5D88FAF7}" src="https://github.com/user-attachments/assets/b1dcc847-e132-45dc-bf02-d56a26e4c5c5" /># Attack Replay (v2.0.0)
 
 Attack Replay – это универсальный инструмент командной строки для тестирования функций безопасности различных сетевых средств защиты информации (СЗИ), таких как **NGFW** (Firewall, IDS/IPS, потоковый антивирус, DPI), **NDR**, **SIEM** и других решений сетевой безопасности.
 
@@ -28,7 +28,8 @@ Attack Replay – это универсальный инструмент ком�
 
 Attack Replay можно применять как отдельно, так и во время нагрузочных тестов с целью проверки эффективности выявления и блокирования атак средствами защиты под нагрузкой.
 
-<img width="1004" height="300" alt="изображение" src="https://github.com/user-attachments/assets/08581772-96cd-40ed-8e70-c0b35271f998" />
+<img width="1004" height="300" alt="{520118FF-21CF-4F60-9821-BE8B5D88FAF7}" src="https://github.com/user-attachments/assets/ae073f67-6a99-4c40-903c-a6b579c06810" />
+
 
 Инструмент объединяет в себе возможности и гибкость таких утилит, как: `tcpreplay`, `tcprewrite`, `tcpprep` и `tcpreplay-edit` `tcpdump`.
 
