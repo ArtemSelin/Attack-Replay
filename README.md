@@ -1,4 +1,4 @@
-<img width="1243" height="380" alt="{520118FF-21CF-4F60-9821-BE8B5D88FAF7}" src="https://github.com/user-attachments/assets/b1dcc847-e132-45dc-bf02-d56a26e4c5c5" /># Attack Replay (v2.0.0)
+# Attack Replay (v2.0.0)
 
 Attack Replay – это универсальный инструмент командной строки для тестирования функций безопасности различных сетевых средств защиты информации (СЗИ), таких как **NGFW** (Firewall, IDS/IPS, потоковый антивирус, DPI), **NDR**, **SIEM** и других решений сетевой безопасности.
 
