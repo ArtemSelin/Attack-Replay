@@ -29,7 +29,7 @@ Attack Replay – это универсальный инструмент ком�
 
 Attack Replay можно применять как отдельно, так и во время нагрузочных тестов с целью проверки эффективности выявления и блокирования атак средствами защиты под нагрузкой.
 
-<img width="1004" height="300" alt="{520118FF-21CF-4F60-9821-BE8B5D88FAF7}" src="https://github.com/user-attachments/assets/ae073f67-6a99-4c40-903c-a6b579c06810" />
+<img width="1560" height="877" alt="84efd651b6a635904a528d523187f38a" src="https://github.com/user-attachments/assets/1aafca56-461f-42a8-9565-b04a532d5be8" />
 
 Инструмент объединяет в себе возможности и гибкость таких утилит, как: `tcpreplay`, `tcprewrite`, `tcpprep` и `tcpreplay-edit`, `tcpdump`.
 
