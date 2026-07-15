@@ -171,7 +171,7 @@ sudo ./attack_replay.sh capture.pcap --ip 192.168.1.1 --topspeed
 
 Подробный разбор принципов работы инструмента **Attack Replay** описан в нашей статье на Habr:
 
-> 🔗 **Читать на Habr:** [Attack Replay: новый инструмент для воспроизведения и модификации трафика при тестировании СЗИ]([https://habr.com/ru/articles/ваш_id_статьи/](https://habr.com/ru/companies/bastion/articles/1037152/))
+> 🔗 **Читать на Habr:** [Attack Replay: новый инструмент для воспроизведения и модификации трафика при тестировании СЗИ](https://habr.com/ru/companies/bastion/articles/1037152/)
 
 ---
 
